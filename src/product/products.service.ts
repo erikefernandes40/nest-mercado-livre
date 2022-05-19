@@ -24,6 +24,10 @@ export class ProductsService {
       });
     }
 
+    async findByCategory(category_id: string){
+      return await await this.prisma.product.findMany({where: {category_id}})
+    }
+
     async update(id: string, data: UpdateProductDto) {
       return await this.prisma.product.update({
         where: { id },
