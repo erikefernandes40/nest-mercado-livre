@@ -1,0 +1,253 @@
+
+[ //Agro
+  { 
+    "id": "MLB1889533817",
+    "title": "Máquina De Solda Inverter Titanium Ti150 Preta 220v",
+    "price": 395.9,
+    "available_quantity": 594,
+    "category_id": "MLB271599"
+  },
+   {
+    "id": "MLB1524972038",
+    "title": "Fecho Do Capo Agrale 4100",
+    "price": 10,
+    "available_quantity": 1,
+    "category_id": "MLB271599"
+   },
+   {
+    "id": "MLB2002183561",
+    "title": "Bomba Periférica Amanco Xkm80 1hp Verde 220v",
+    "price": 469,
+    "available_quantity": 118,
+    "category_id": "MLB271599"  
+   },
+   {
+    "id": "MLB1891035355",
+    "title": "Lavadora De Alta Pressão Kärcher K2 Portable Black Com 1600psi De Pressão Máxima 127v",
+    "price": 511.9,
+    "available_quantity": 239,
+    "category_id": "MLB271599"
+   },
+
+   //Acessorios para veiculos
+
+   {
+    "id": "MLB1542990967",
+    "title": "10x Farol De Milha 14 Led 42w 12v/24v Redondo Off-road 6000k",
+    "price": 202.2,
+    "available_quantity": 5000,
+    "category_id": "MLB5672"
+   },
+   {
+    "id": "MLB1985412718",
+    "title": "Acessório Carro Apoio Braço Encosto Descanso Porta Objetos",
+    "price": 154.9,
+    "available_quantity": 50000,
+    "category_id": "MLB5672"
+   },
+   {
+    "id": "MLB2096085553",
+    "title": "Cadeira Infantil Para Carro Fisher-price All-stages Fix 2.0 Cinza",
+    "price": 934,
+    "available_quantity": 27,
+    "category_id": "MLB5672"
+   },
+   {
+    "id": "MLB1903752342",
+    "title": "Geladeira Portátil Para Caminhão 31 Litros Resfriar 12/24v",
+    "price": 2599,
+    "available_quantity": 50,
+    "category_id": "MLB5672"
+   },
+
+   // Alimentos e bebidas
+
+   {
+    "id": "MLB2015079901",
+    "title": "Vinho Tinto Meio Seco Merlot Santa Helena Reservado 2018 Adega Viña San Pedro Tarapacá 750 Ml",
+    "price": 26.9,
+    "available_quantity": 242,
+    "category_id": "MLB1403"
+   },
+   {
+    "id": "MLB2003341763",
+    "title": "Salgadinho De Batata Pringles Original 114 G",
+    "price": 10.97,
+    "available_quantity": 51,
+    "category_id": "MLB1403"
+   },
+   {
+    "id": "MLB2079560719",
+    "title": "Whisky Americano Apple Jack Daniel's Garrafa 1l",
+    "price": 159,
+    "available_quantity": 7,
+    "category_id": "MLB1403"
+   },
+   {
+    "id": "MLB1840796626",
+    "title": "Molho De Tomate Tradicional Heinz Em Sachê 250 G",
+    "price": 2.05,
+    "available_quantity": 56,
+    "category_id": "MLB1403"
+   },
+   //Animals
+
+   {
+      "id": "MLB2007226267",
+      "title": "Alimento Whiskas 1+ Para Gato Adulto Sabor Carne Ao Molho Em Sachê De 85g",
+      "price": 2.48,
+      "available_quantity": 421,
+      "category_id": "MLB1071"
+   },
+   {
+    "id": "MLB2083618981",
+    "title": "Alimento Special Dog Premium Especial Para Cachorro Adulto Todos Os Tamanhos Sabor Carne Em Sachê De 100g",
+    "price": 2.15,
+    "available_quantity": 2738,
+    "category_id": "MLB1071"
+   },
+   {
+    "id": "MLB2087052196",
+    "title": "Alimento Special Dog Premium Especial Para Cachorro Filhote Todos Os Tamanhos Sabor Frango Em Sachê De 100g",
+    "price": 2.49,
+    "available_quantity": 443,
+    "category_id": "MLB1071"
+   },
+   {
+    "id": "MLB1884404482",
+    "title": "Máquina De Tosar Pelo Animais Cães E Gatos S/fio Km - 6188",
+    "price": 104,
+    "available_quantity": 500,
+    "category_id": "MLB1071"
+   },
+
+   //Antiguidades e colecoes
+
+   {
+    "id": "MLB2020049099",
+    "title": "Faca Gaucha Churrasco Aço Inox Cabo Curvo Chifre E Couro 10´",
+    "price": 149.99,
+    "available_quantity": 1,
+     "category_id": "MLB1367"
+   },
+   {
+    "id": "MLB1588511630",
+    "title": "Cruz Crucifixo De Parede Madeira E Metal São Bento 34cm",
+    "price": 29.9,
+    "available_quantity": 50,
+    "category_id": "MLB1367"
+   },
+   {
+    "id": "MLB2163111958",
+    "title": "Vitrola Vicini Toca Disco Vinil Maleta Bluetooth Usb Bivolt",
+    "price": 399,
+    "available_quantity": 500,
+    "category_id": "MLB1367"
+   },
+   {
+    "id": "MLB1343797934",
+    "title": "Bandeira Do Brasil Grande 3 Panos (1,92x1,35)",
+    "price": 150,
+    "available_quantity": 50,
+    "category_id": "MLB1367"
+   },
+
+   //Arte, Papelaria e Armarinho
+
+   {
+    "id": "MLB2118491714",
+    "title": "Escova Para Lavar Condor",
+    "price": 3.41,
+    "available_quantity": 39,
+    "category_id": "MLB1368"
+   },
+   {
+    "id": "MLB2214828523",
+    "title": "Rolo Adesivo Tira Pelos Scotch-brite 100mm X 3,1m Refil",
+    "price": 13.86,
+    "available_quantity": 13,
+    "category_id": "MLB1368"
+   },
+   {
+    "id": "MLB2021871572",
+    "title": "Folha Papel De Seda Para Embalagem Roupas Sapatos 100 Folhas",
+    "price": 29.45,
+    "available_quantity": 500,
+    "category_id": "MLB1368"
+   },
+   {
+    "id": "MLB1849154870",
+    "title": "Rolo Adesivo Tira Pelos Scotch-brite 100mm X 3,1m 21 Folhas",
+    "price": 21.29,
+    "available_quantity": 49,
+    "category_id": "MLB1368"
+   },
+
+   //Bebês
+
+   {
+    "id": "MLB2030412524",
+    "title": "Creme Preventivo De Assaduras Sem Perfume Bepantol Baby Caixa 120g Grátis 20g Leve Mais Pague Menos",
+    "price": 41.69,
+    "available_quantity": 391,
+    "category_id": "MLB1384"
+   },
+   {
+    "id": "MLB1503675678",
+    "title": "Fórmula Infantil Em Pó Sem Glúten Danone Aptamil Premium 2 Em Lata De 800g - 6 A 10 Meses",
+    "price": 47,
+    "available_quantity": 256,
+    "category_id": "MLB1384"
+   },
+   {
+    "id": "MLB1489868685",
+    "title": "Fórmula Infantil Em Pó Sem Glúten Danone Aptamil Premium 1 Em Lata De 800g - 0 A 6 Meses",
+    "price": 44.38,
+    "available_quantity": 216,
+    "category_id": "MLB1384"
+   },
+   {
+    "id": "MLB1357644023",
+    "title": "Body Bebê+mijão Liso E Estampado Kit C/28 Roupa Bebê Atacado",
+    "price": 128.16,
+    "available_quantity": 5000,
+    "category_id": "MLB1384"
+   },
+
+   //Beleza e Cuidado Pessoal
+
+   {
+    "id": "MLB2195398578",
+    "title": "Leave-in Cicatri Renov Elseve 50ml",
+    "price": 12.99,
+    "available_quantity": 78,
+    "category_id": "MLB1246"
+   },
+   {
+    "id": "MLB1798199147",
+    "title": "Repelente Loção Xô Inseto Squeeze 200ml",
+    "price": 9.8,
+    "available_quantity": 643,
+    "category_id": "MLB1246"
+   },
+   {
+    "id": "MLB2154319798",
+    "title": "Sabonete Barra Original Dove Caixa 90g",
+    "price": 2.99,
+    "available_quantity": 13,
+    "category_id": "MLB1246"
+   },
+   {
+    "id": "MLB2146121992",
+    "title": "Barbeador Y Cortador De Cabelo Relaxmedic Rb-am6800a Prateado 110v/220v",
+    "price": 266.91,
+    "available_quantity": 80,
+    "category_id": "MLB1246"
+   },
+
+   //Brinquedos e Hobbies
+
+   {
+     
+    "category_id": "MLB1132"
+   },

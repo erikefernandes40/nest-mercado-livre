@@ -4,14 +4,14 @@ WORKDIR /app
 
 COPY package*.json ./
 COPY ./prisma/ ./prisma/
-RUN npx prisma generate
+# RUN yarn prisma generate
 
-RUN npm install
+RUN yarn
 
 COPY  . .
 
-RUN npm run build
+RUN yarn build
 
 EXPOSE 3000
-
-CMD ["npm", "run", "start:dev"]
+ENV NODE_ENV development
+CMD ["yarn", "start:dev"]

@@ -8,34 +8,61 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
 
   email    String @unique
   password String
 
-  name String
+  name  String
+  Order Order[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+
+  @@map("user")
 }
 
 model Order {
-  id Int @id @default(autoincrement())
+  id      String @id @default(uuid())
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
 
-  //user_id User @relation(fields: [], references: [id])
-
-  product_id Int
+  ProductsOnOrder ProductsOnOrder[]
 }
 
 model Product {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
 
   title String
 
   price Float
 
-  available_quanttity Int
+  available_quantity Int
+
+  category        Category          @relation(fields: [category_id], references: [id])
+  category_id     String
+  ProductsOnOrder ProductsOnOrder[]
+  createdAt       DateTime          @default(now()) @map("created_at")
+  updatedAt       DateTime          @updatedAt @map("updated_at")
+  @@map("product")
+}
+
+model ProductsOnOrder {
+  order      Order   @relation(fields: [order_id], references: [id])
+  order_id   String
+  product    Product @relation(fields: [product_id], references: [id])
+  product_id String
+
+  @@id([order_id, product_id])
 }
 
 model Category {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
 
-  name String
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  name      String
+  Product   Product[]
+  @@map("category")
 }
