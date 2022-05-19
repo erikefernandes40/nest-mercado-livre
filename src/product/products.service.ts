@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Prisma, Product } from '@prisma/client';
+import { Prisma, PrismaClient, Product } from '@prisma/client';
 import { CategoriesService } from 'src/categories/categories.service';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateProductDto } from './dto/create.product.dto';
@@ -7,8 +7,7 @@ import { UpdateProductDto } from './dto/update.product.dto';
 
 @Injectable()
 export class ProductsService {
-  constructor(private readonly prisma: PrismaService,
-              private readonly categoriesService : CategoriesService){}
+  constructor(private readonly prisma: PrismaService){}
   
   async createProduct(createProductDto: CreateProductDto ): Promise<Product> {
     return this.prisma.product.create({data:createProductDto});
@@ -24,8 +23,8 @@ export class ProductsService {
       });
     }
 
-    async findByCategory(category_id: string){
-      return await await this.prisma.product.findMany({where: {category_id}})
+    async findByCategory(category_id: string) {
+      return await this.prisma.product.findMany({where: {category_id}})
     }
 
     async update(id: string, data: UpdateProductDto) {

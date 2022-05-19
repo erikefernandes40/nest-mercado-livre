@@ -24,10 +24,13 @@ model User {
 }
 
 model Order {
-  id      String @id @default(uuid())
-  user    User   @relation(fields: [user_id], references: [id])
-  user_id String
-
+  id              String            @id @default(uuid())
+  user            User              @relation(fields: [user_id], references: [id])
+  user_id         String
+  product         Product           @relation(fields: [product_id], references: [id])
+  product_id      String
+  createdAt       DateTime          @default(now()) @map("created_at")
+  updatedAt       DateTime          @updatedAt @map("updated_at")
   ProductsOnOrder ProductsOnOrder[]
 }
 
@@ -43,6 +46,7 @@ model Product {
   category        Category          @relation(fields: [category_id], references: [id])
   category_id     String
   ProductsOnOrder ProductsOnOrder[]
+  Order           Order[]
   createdAt       DateTime          @default(now()) @map("created_at")
   updatedAt       DateTime          @updatedAt @map("updated_at")
   @@map("product")

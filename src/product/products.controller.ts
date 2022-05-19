@@ -1,7 +1,5 @@
 import { Delete, Param, Put } from '@nestjs/common';
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { CategoriesService } from 'src/categories/categories.service';
-import { Category } from 'src/categories/entities/category.entity';
 import { CreateProductDto } from './dto/create.product.dto';
 import { UpdateProductDto } from './dto/update.product.dto';
 import { Product } from './entities/product.entity';
@@ -9,9 +7,7 @@ import { ProductsService } from './products.service';
 
 @Controller('products')
 export class ProductsController {
-  categoryService: any;
-  constructor(private readonly productsService : ProductsService,
-              private readonly categoriesService: CategoriesService){}
+  constructor(private readonly productsService : ProductsService,){}
 
   
   @Post()
@@ -22,11 +18,6 @@ export class ProductsController {
                                                                       
   @Get()
   findAll():Promise<Product[]> {
-    return this.productsService.findAll();
-  }
-
-  @Get()
-  findAllProducts(){
     return this.productsService.findAll();
   }
 
