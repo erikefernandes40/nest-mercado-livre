@@ -18,13 +18,14 @@ export class CategoriesController {
     return this.categoriesService.create(createCategoryDto);
   }
 
-  @Get()
-  findAll(): Promise<Category[]> {
-    return this.categoriesService.findAll();
+  @Get('some')
+  findSomeCategories(){
+    return this.categoriesService.findSomeCategories();
   }
+
   @Get()
-  findAllProducts(){
-    return this.productsService.findAll();
+  findAll(){
+    return this.categoriesService.findAll()
   }
 
   @Get(':id')
@@ -42,5 +43,4 @@ export class CategoriesController {
   remove(@Param('id') id: string) {
     return this.categoriesService.remove(id);
   }
-
 }

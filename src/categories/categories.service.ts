@@ -1,25 +1,32 @@
-import { Get, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { ProductsService } from 'src/product/products.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update.category.dto';
-//import { Category } from './entities/category.entity';
-
-
-
 @Injectable()
 export class CategoriesService {
  
-  constructor(private readonly prisma : PrismaService,
-              ){}
+  constructor(private readonly prisma : PrismaService){}
   
   async create(createCategoryDto: CreateCategoryDto){
     return await this.prisma.category.createMany({data:createCategoryDto})
   }
 
-    findAll() {
-      return this.prisma.category.findMany()
+    findSomeCategories() {
+      return this.prisma.category.findMany({
+        where :{
+          name:{
+            in : ['Câmeras e Acessórios', 'Celulares e Telefones', 'Eletrônicos, Áudio e Vídeo', 'Games' ],
+           },
+        }, select: {
+          name: true,
+          id: true
+        }
+      })
     };
+
+    findAll(){
+      return this.prisma.category.findMany()
+    }
 
     findOne(id: string) {
       return this.prisma.category.findUnique({
