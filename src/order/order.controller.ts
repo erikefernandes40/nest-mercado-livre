@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { UserService } from 'src/user/user.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { OrderService } from './order.service';
@@ -16,6 +17,11 @@ export class OrderController {
   @Get()
   findAll(){
     return this.orderService.findAll();
+  }
+
+  @Get('products/name')
+  findProductsByuserName(){
+    return this.orderService.findProductsWithUserName()
   }
 
   @Get(':id')

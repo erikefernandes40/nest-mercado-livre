@@ -14,6 +14,25 @@ export class OrderService {
     return this.prisma.order.findMany()
   };
 
+  findProductsWithUserName(){
+    return this.prisma.order.findMany({ 
+      include:{
+        user: {
+          select:{
+            name: true,
+          },
+        },
+        product:{
+          select: {
+            title: true
+          }
+        },
+        
+      },
+      
+    })
+  }
+
   findOne(id: string) {
     return this.prisma.order.findUnique({
       where: { id }
@@ -29,7 +48,7 @@ export class OrderService {
 
   remove(id: string) {
     return this.prisma.order.delete({
-      where: { id:id },
+      where: { id },
     });
   }
 }
