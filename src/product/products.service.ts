@@ -27,6 +27,17 @@ export class ProductsService {
       return await this.prisma.product.findMany({where: {category_id}})
     }
 
+    findBySmallerPrice(category_id: string){
+      return this.prisma.product.findMany({
+        where:{
+          category_id,
+        },
+        orderBy:{
+          price: 'asc'
+        }
+    })
+    }
+
     async update(id: string, data: UpdateProductDto) {
       return await this.prisma.product.update({
         where: { id },
