@@ -1,6 +1,4 @@
 # API REST MERCADO LIVRE / NESTJS
-ou
-<h1 align="center">API REST MERCADO LIVRE / NESTJS</h1>
 
 ## Descrição
 <p align="center">REST API for registering products, users, orders, using the api Mercado Livre.</p>
@@ -46,6 +44,11 @@ The following tools were used in building the project:
 
 
 ### Routes
+
+### To access the routes you must register a user. Then you must login to the application to receive a token that must be passed to access the other routes
+
+# Aplication
+http://localhost:3003/
 
 # User
 http://localhost:3003/user
