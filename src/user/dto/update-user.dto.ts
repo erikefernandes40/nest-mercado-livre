@@ -1,7 +1,7 @@
 import { IsEmail, IsNumber, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 export class UpdateUserDto{
   @IsString()
-  id: string;
+  id?: number;
 
   @IsEmail()
   email: string;
@@ -12,10 +12,10 @@ export class UpdateUserDto{
   @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
     message: 'password too weak',
   })
-  password: string;
+  password?: string;
 
   @IsString()
-  name: string;
+  name?: string;
 
   updatedAt: Date
 

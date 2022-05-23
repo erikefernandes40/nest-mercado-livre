@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common'
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { IsPublic } from 'src/auth/decorators/is-public.decorator';
+import { IsPublic } from '../auth/decorators/is-public.decorator';
 
 @Controller('user')
 export class UserController {
@@ -24,12 +24,12 @@ export class UserController {
   }
 
   @Put(':id')
-  async update(@Param() id: string, @Body() updateUserDto: UpdateUserDto){
+  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto){
     return this.userService.update(id, updateUserDto)
   }
 
   @Delete(':id')
-  async delete(@Param() id: string){
+  async delete(@Param('id') id: string){
     return this.userService.delete(id)
   }
 
