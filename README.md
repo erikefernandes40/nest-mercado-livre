@@ -1,6 +1,6 @@
-# API REST MERCADO LIVRE / NESTJS
+# RESTAPI MERCADO LIVRE / NESTJS
 
-## Descrição
+## Description
 <p align="center">REST API for registering products, users, orders, using the api Mercado Livre.</p>
 
 ### Features
