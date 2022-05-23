@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import * as bcrypt from 'bcrypt'
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -23,16 +23,16 @@ constructor( readonly prisma: PrismaService){}
   }
 
   async findAll() {
-    return this.prisma.user.findMany()
+    return await this.prisma.user.findMany()
   }
 
   async findByEmail(email: string) {
-    return this.prisma.user.findUnique({
+    return await this.prisma.user.findUnique({
       where: { email },
     });
   }
 
- async update(id: string, updateUserDto : UpdateUserDto){
+ async update(email: string, updateUserDto : UpdateUserDto){
    
     return await this.prisma.user.update({
       data : {
@@ -40,16 +40,15 @@ constructor( readonly prisma: PrismaService){}
         id: undefined,
       }, 
       where: {
-        id,
+        email,
       },
     })
  }
 
   async delete(id: string) {
-
-    return this.prisma.user.delete({
+    await this.prisma.user.delete({
       where: {
-        id,
+        id
       },
     })
   }
