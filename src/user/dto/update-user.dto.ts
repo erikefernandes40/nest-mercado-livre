@@ -17,4 +17,6 @@ export class UpdateUserDto{
   @IsString()
   name: string;
 
+  updatedAt: Date
+
 }
