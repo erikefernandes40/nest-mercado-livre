@@ -107,7 +107,7 @@ describe('UserController', () => {
         "password": "I73%moWdf131525dsdwzC",
         "name": "ze ricardo",
         id: 1,
-        updatedAt: undefined
+        updateAt: undefined
       }
 
       const result = await userController.update('erick123@gmail.com', body)
@@ -124,7 +124,7 @@ describe('UserController', () => {
         "password": "I73%moWdf131525dsdwzC",
         "name": "ze ricardo",
         id: 1,
-        updatedAt: undefined
+        updateAt: undefined
       }
 
       jest.spyOn(userService, 'update').mockRejectedValueOnce(new Error())
