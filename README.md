@@ -47,6 +47,9 @@ The following tools were used in building the project:
 
 ### To access the routes you must register a user. Then you must login to the application to receive a token that must be passed to access the other routes
 
+# Map of all routes
+http://localhost:3003/api/
+
 # Aplication
 http://localhost:3003/
 
