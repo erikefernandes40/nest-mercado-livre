@@ -3,12 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaService } from './prisma/prisma.service';
 import { Product } from './product/entities/product.entity';
-import { ProductsService } from './product/products.service';
 
 const productEntityList: Product[] = [
   new Product(	{
 		"id": "MLB1002446405",
-		"title": "Relógio Champion Feminino Dourado Prova D´água Original",
+		"title": "Relógio Champion Feminino Dourado Prova Dágua Original",
 		"price": 239.1,
 		"available_quantity": 250,
 		"category_id": "MLB3937",
