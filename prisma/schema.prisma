@@ -27,11 +27,13 @@ model Order {
   id              String            @id @default(uuid())
   user            User              @relation(fields: [user_id], references: [id])
   user_id         String
-  product         Product           @relation(fields: [product_id], references: [id])
+  product         Product           @relation(fields: [product_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
   product_id      String
   createdAt       DateTime          @default(now()) @map("created_at")
   updatedAt       DateTime          @updatedAt @map("updated_at")
   ProductsOnOrder ProductsOnOrder[]
+
+  @@map("order")
 }
 
 model Product {
@@ -43,7 +45,7 @@ model Product {
 
   available_quantity Int
 
-  category        Category          @relation(fields: [category_id], references: [id])
+  category        Category          @relation(fields: [category_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
   category_id     String
   ProductsOnOrder ProductsOnOrder[]
   Order           Order[]
