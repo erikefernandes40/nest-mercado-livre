@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update.category.dto';
 @Injectable()
@@ -41,8 +41,8 @@ export class CategoriesService {
       });
     }
 
-    remove(id: string) {
-      return this.prisma.category.delete({
+    delete(id: string) {
+      this.prisma.category.delete({
         where: { id },
       });
     }

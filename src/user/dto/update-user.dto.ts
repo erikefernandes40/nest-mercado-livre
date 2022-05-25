@@ -1,7 +1,7 @@
 import { IsEmail, IsNumber, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 export class UpdateUserDto{
   @IsString()
-  id?: number;
+  id?: string;
 
   @IsEmail()
   email: string;

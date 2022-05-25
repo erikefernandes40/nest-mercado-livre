@@ -1,6 +1,6 @@
 import { Body, Delete, HttpCode, HttpStatus, Param, Post, Put } from '@nestjs/common';
 import { Controller, Get } from '@nestjs/common';
-import { IsPublic } from 'src/auth/decorators/is-public.decorator';
+import { IsPublic } from '../auth/decorators/is-public.decorator';
 import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update.category.dto';
@@ -36,7 +36,7 @@ export class CategoriesController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string) {
-    return this.categoriesService.remove(id);
+  delete(@Param('id') id: string) {
+    this.categoriesService.delete(id);
   }
 }

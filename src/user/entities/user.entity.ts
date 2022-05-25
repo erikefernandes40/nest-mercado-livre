@@ -4,7 +4,7 @@ export class User {
   password: string;
   name: string;
   createdAt: Date;
-  updateAt: Date;
+  updatedAt: Date;
 
   constructor(user:Partial<User>){
     this.id = user?.id
@@ -12,6 +12,6 @@ export class User {
     this.password = user?.password
     this.name = user?.name
     this.createdAt = user?.createdAt
-    this.updateAt = user?.updateAt
+    this.updatedAt = user?.updatedAt
   }
 }

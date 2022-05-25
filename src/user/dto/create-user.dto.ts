@@ -23,5 +23,5 @@ export class CreateUserDto extends User {
   name: string;
 
   createdAt: Date;
-  updateAt: Date;
+  updatedAt: Date;
 }
