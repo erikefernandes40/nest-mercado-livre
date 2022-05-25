@@ -1,0 +1,26 @@
+[
+  {
+    "id":"1",
+		"email": "erickfernando@gmail.com",
+		"password": "0a$Vj*!cOrvp",
+		"name": "erick original"
+  },
+  {
+  "id":"2",
+  "email": "erickfernando2@gmail.com",
+  "password": "0a$Vj*!cOrvp",
+  "name": "erick 2"
+  },
+  {
+  "id":"3",
+  "email": "erickfefernando3@gmail.com",
+  "password": "0a$Vj*!cOrvp",
+  "name": "erick 3"
+  },
+  {
+  "id":"6",
+  "email": "erickfefffrnando4@gmail.com",
+  "password": "0a$Vj*!cOrvp",
+  "name": "erick 4"
+}
+]
