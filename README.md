@@ -14,7 +14,8 @@
 
 Before starting, you will need to have the following tools installed on your machine::
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Docker](https://www.docker.com/). 
-Besides, it's good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/)
+Besides, it's good to have an editor to work with the code like [VSCode](https://code.visualstudio.com/),
+[Insomnia](https://insomnia.rest/download) or [Postman](https://www.postman.com/downloads/).
 
 ### 🎲  Running the backend (server)
 
