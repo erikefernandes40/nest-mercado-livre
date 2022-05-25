@@ -11,7 +11,7 @@ const userList : User[] = [
   new User({id: '2', email: 'erickfernando22@gmail.com', name: 'erick carvalho'}),
   new User({id: '3', email: 'erickfernando33@gmail.com', name: 'erick fernandes'})
 ]
-const updatedUser = new User({id: '2', email: 'erick123@gmail.com', name: 'simone', updateAt: undefined})
+const updatedUser = new User({id: '2', email: 'erick123@gmail.com', name: 'simone', updatedAt: undefined})
 
 
 describe('UserService', () => {
@@ -73,12 +73,12 @@ describe('UserService', () => {
   describe('create', () => {
     it('should create a new user successfully', async () => {
       const data: CreateUserDto = {
-        "email": "fernando@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "fernando",
+        email: "fernando@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "fernando",
         createdAt: undefined,
-        updateAt: undefined,
-        id: ''
+        updatedAt: undefined,
+        id: "3"
       }
 
       const result = await userService.create(data)
@@ -90,12 +90,12 @@ describe('UserService', () => {
 
     it('should throw an exception', () => {
       const data: CreateUserDto = {
-        "email": "fernando@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "fernando",
+        email: "fernando@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "fernando",
         createdAt: undefined,
-        updateAt: undefined,
-        id: ''
+        updatedAt: undefined,
+        id: "3"
       }
 
       jest.spyOn(userService, 'create').mockRejectedValueOnce(new Error())
@@ -107,10 +107,9 @@ describe('UserService', () => {
   describe('update', () => {
     it('should update a user successfully', async () =>{
       const data: UpdateUserDto = {
-        "email": "ze123@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "ze ricardo",
-        id: 1,
+        email: "ze123@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "ze ricardo",
         updateAt: undefined
       }
 
@@ -139,10 +138,10 @@ describe('UserService', () => {
       jest.spyOn(userService, 'update').mockRejectedValueOnce(new Error())
 
       const data: UpdateUserDto = {
-        "email": "ze123@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "ze ricardo",
-        id: 1,
+        email: "ze123@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "ze ricardo",
+        id: "1",
         updateAt: undefined
       }
 

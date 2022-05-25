@@ -53,12 +53,12 @@ describe('UserController', () => {
   describe('create', () => {
     it('should create a new user successfully', async () => {
       const body: CreateUserDto = {
-        "email": "maicom@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "maicom",
+        email: "maicom@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "maicom",
         createdAt: undefined,
-        updateAt: undefined,
-        id: ''
+        updatedAt: undefined,
+        id: '3'
       }
     const result = await userController.create(body)
 
@@ -67,15 +67,15 @@ describe('UserController', () => {
     expect(userService.create).toHaveBeenCalledWith(body)
     })
 
-    it('should throw new exception', () =>{
+    it('should throw an exception', () =>{
 
       const body: CreateUserDto = {
-        "email": "maicom@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "maicom",
+        email: "maicom@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "maicom",
         createdAt: undefined,
-        updateAt: undefined,
-        id: ''
+        updatedAt: undefined,
+        id: '2'
       }
       jest.spyOn(userService, 'create').mockRejectedValueOnce(new Error())
 
@@ -103,10 +103,10 @@ describe('UserController', () => {
   describe('update', () => {
     it('should update a user by email successfuly', async () =>{
       const body: UpdateUserDto = {
-        "email": "ze123@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "ze ricardo",
-        id: 1,
+        email: "ze123@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "ze ricardo",
+        id: '1',
         updateAt: undefined
       }
 
@@ -120,10 +120,10 @@ describe('UserController', () => {
 
     it('should throw an exception', () => {
       const body: UpdateUserDto = {
-        "email": "ze123@hotmail.com",
-        "password": "I73%moWdf131525dsdwzC",
-        "name": "ze ricardo",
-        id: 1,
+        email: "ze123@hotmail.com",
+        password: "I73%moWdf131525dsdwzC",
+        name: "ze ricardo",
+        id: '1',
         updateAt: undefined
       }
 
