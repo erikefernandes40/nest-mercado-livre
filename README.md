@@ -32,6 +32,9 @@ $ yarn
 # Run the application
 $ docker-compose up
 
+# Create data in the database
+$ yarn prisma db seed
+
 # The server will start on port:3003 - access <http://localhost:3003>
 
 ### 🛠 Tecnologies

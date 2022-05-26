@@ -995,7 +995,7 @@ let products = [
     "category_id": "MLB264586"
   },
   {
-    "id": "MLB2106498887",
+    "id": "MLB2106498889",
     "title": "Suplemento Em Pó Black Skull Creatine Turbo Creatina Em Pote De 150g",
     "price": 37.69,
     "available_quantity": 1,
@@ -1077,26 +1077,27 @@ let orders = [
 },
 {
 	"id": "6",
-	"user_id": "4",
+	"user_id": "6",
 	"product_id": "MLB1889533817"
 }
 ]
 
   async function main(){
-    for (let order of orders){
-      await prisma.order.createMany({data: order})
+
+    for (let category of categories){
+      await prisma.category.createMany({data: category})
     }
 
     for (let product of products){
       await prisma.product.createMany({data: product})
     }
 
-    for (let category of categories){
-      await prisma.category.createMany({data: category})
-    }
-
     for(let user of users){
       await prisma.user.createMany({data: user})
+    }
+
+    for (let order of orders){
+      await prisma.order.createMany({data: order})
     }
   }
 

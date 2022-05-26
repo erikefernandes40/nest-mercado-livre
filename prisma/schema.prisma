@@ -20,20 +20,20 @@ model User {
   updatedAt DateTime @updatedAt @map("updated_at")
 
 
-  @@map("user")
+  @@map("users")
 }
 
 model Order {
   id              String            @id @default(uuid())
-  user            User              @relation(fields: [user_id], references: [id])
+  user            User              @relation(fields: [user_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
   user_id         String
-  product         Product           @relation(fields: [product_id], references: [id], onUpdate: Cascade, onDelete: Restrict)
+  product         Product           @relation(fields: [product_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
   product_id      String
   createdAt       DateTime          @default(now()) @map("created_at")
   updatedAt       DateTime          @updatedAt @map("updated_at")
   ProductsOnOrder ProductsOnOrder[]
 
-  @@map("order")
+  @@map("orders")
 }
 
 model Product {
@@ -55,12 +55,14 @@ model Product {
 }
 
 model ProductsOnOrder {
-  order      Order   @relation(fields: [order_id], references: [id])
+  order      Order   @relation(fields: [order_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
   order_id   String
-  product    Product @relation(fields: [product_id], references: [id])
+  product    Product @relation(fields: [product_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
   product_id String
 
+
   @@id([order_id, product_id])
+  @@map("productOnOrder")
 }
 
 model Category {
