@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update.category.dto';
@@ -11,8 +11,8 @@ export class CategoriesService {
     return await this.prisma.category.createMany({data:createCategoryDto})
   }
 
-    findSomeCategories() {
-      return this.prisma.category.findMany({
+  async findSomeCategories() {
+      return await this.prisma.category.findMany({
         where :{
           name:{
             in : ['Câmeras e Acessórios', 'Celulares e Telefones', 'Eletrônicos, Áudio e Vídeo', 'Games' ],
@@ -24,27 +24,44 @@ export class CategoriesService {
       })
     };
 
-    findAll(){
-      return this.prisma.category.findMany()
+    async findAll(){
+      return await this.prisma.category.findMany()
     }
 
-    findOne(id: string) {
-      return this.prisma.category.findUnique({
+    async findOne(id: string) {
+      const findOneCategory = await this.prisma.category.findUnique({
         where: { id }
       });
+      if(!findOneCategory){
+        throw new HttpException('Category Not Found', HttpStatus.NOT_FOUND)
+      }
+      return findOneCategory
     }
 
     async update(id: string, data: UpdateCategoryDto) {
-      return await this.prisma.category.update({
-        where : { id },
-        data,
-      });
+      try {
+        const updateCategory =  await this.prisma.category.update({
+          where : { id },
+          data,
+        });
+        
+        return updateCategory
+        
+      } catch (error) {
+        
+        throw new NotFoundException('Category Not Found')
+      }
     }
 
-    delete(id: string) {
-      this.prisma.category.delete({
-        where: { id },
-      });
+    async delete(id: string) {
+      try {
+        return await this.prisma.category.delete({
+          where: { id },
+        });
+        
+      } catch (error) {
+        throw new NotFoundException('Category Not Found')
+      }
     }
 }
 

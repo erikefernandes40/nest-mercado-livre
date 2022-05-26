@@ -37,6 +37,6 @@ export class CategoriesController {
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id') id: string) {
-    this.categoriesService.delete(id);
+    return this.categoriesService.delete(id);
   }
 }
