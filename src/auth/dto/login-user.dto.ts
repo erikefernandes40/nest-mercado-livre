@@ -1,11 +1,10 @@
 import { ApiProperty } from "@nestjs/swagger"
 
-export class UpdateCategoryDto{
+export class LoginUser{
 
   @ApiProperty()
-  id: string
+  email: string
 
   @ApiProperty()
-  name: string
-  updatedAt: Date
+  password: string
 }

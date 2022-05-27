@@ -48,20 +48,22 @@ export class OrderService {
 
   async update(id: string, data: UpdateOrderDto) {
     try {
-      return await this.prisma.order.update({
+      const updateOrder = await this.prisma.order.update({
         where: { id },
         data,
       });  
+      return updateOrder
     } catch (error) {
-      throw new HttpException('Order Not Found', HttpStatus.NOT_FOUND)
+      throw new HttpException('Order or product_id Not Found', HttpStatus.NOT_FOUND)
     }
   }
 
   async remove(id: string) {
     try {
-       await this.prisma.order.delete({
+       const deleteOrder = await this.prisma.order.delete({
         where: { id },
       });
+      return deleteOrder
     } catch (error) {
       throw new HttpException('Order Not Found', HttpStatus.NOT_FOUND)
     }

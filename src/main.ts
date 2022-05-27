@@ -4,10 +4,19 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const config = new DocumentBuilder()
-  .setTitle('Cats example')
-  .setDescription('The cats API description')
+  .setTitle('Api Rest Mercado Livre')
+  .setDescription('REST API for registering products, users, orders, using the api Mercado Livre.')
   .setVersion('1.0')
-  .addTag('cats')
+  .addTag('Mercado Livre')
+  .addBearerAuth({
+    type: 'http',
+    scheme: 'bearer',
+    bearerFormat: 'Token',
+    name: 'JWT',
+    description: 'Enter JWT token',
+    in: 'header',
+  },
+  'JWT-auth',)
   .build();
 const document = SwaggerModule.createDocument(app, config);
 SwaggerModule.setup('api', app, document);
