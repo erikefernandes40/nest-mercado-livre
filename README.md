@@ -37,6 +37,9 @@ $ yarn prisma db seed
 
 # The server will start on port:3003 - access <http://localhost:3003>
 
+# Create a user and login. Copy the generated auth token and paste in the indicated location to access protected routes
+$ example of token generated: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJzdWIiOiIxNTc0MWVkMi1kZmVmLTQyYzMtYmFjZi05OTI2N2ZlYzU1OGYiLCJlbWFpbCI6ImVyaWNrZmVybmFuZG8xMjNAZ21haWwuY29tIiwibmFtZSI6ImVyaWNrIGZlcm5hbmRvIGFtYXJhbCIsImlhdCI6MTY1MzY2OTYyMywiZXhwIjoxNjU2MjYxNjIzfQ.Pj8P9IyN8nacPTLxccKlRhd6Y6Y2QW4A63R0Ttu8JLM
+
 ### 🛠 Tecnologies
 
 The following tools were used in building the project:
@@ -45,6 +48,7 @@ The following tools were used in building the project:
 - [TypeScript]
 - [Docker]
 - [Prisma ORM]
+- [Swagger]
 
 
 ### Routes
