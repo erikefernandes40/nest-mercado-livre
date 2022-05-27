@@ -70,7 +70,7 @@ http://localhost:3003/products
 # Order
 http://localhost:3003/order
 
-# how to access the data of Database
+# how to access Database data
 $type => mysql
 $port => 3309
 $user => root
