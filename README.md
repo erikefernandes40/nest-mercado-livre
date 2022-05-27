@@ -67,5 +67,10 @@ http://localhost:3003/user
 # Products
 http://localhost:3003/products
 
-#Order
+# Order
 http://localhost:3003/order
+
+# solution for possible erros 
+$ 1- install dependencies inside docker ( yarn )
+
+$ 2 - run ( yarn prisma migrate dev ) inside docker for create the database tables 
