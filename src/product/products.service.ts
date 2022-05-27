@@ -8,7 +8,15 @@ export class ProductsService {
   constructor(private readonly prisma: PrismaService){}
   
   async createProduct(createProductDto: CreateProductDto ){
-    return await this.prisma.product.create({data:createProductDto});
+    try {
+      const createProduct = await this.prisma.product.create({
+        data: createProductDto
+      });
+      return createProduct
+    } catch (error) {
+      throw new HttpException('category_id Not Found', HttpStatus.NOT_FOUND)
+
+    }
   }
 
     findAll() {
@@ -26,17 +34,18 @@ export class ProductsService {
     }
 
     async findByCategory(category_id: string) {
-      try {
+      
         const findProductCategory = await this.prisma.product.findMany({
           where: {
             category_id
           }
         })
+        if(findProductCategory.length === 0){
+          throw new HttpException('Category Not Found', HttpStatus.NOT_FOUND)
+        }
         return findProductCategory
 
-      } catch (error) {
-        throw new HttpException('Category Not Found', HttpStatus.NOT_FOUND)
-      }
+      
       
     }
 
@@ -49,6 +58,10 @@ export class ProductsService {
           price: 'asc'
         }
       })
+
+      if(productOrdenedSmallestPrice.length === 0){
+        throw new HttpException('Category Not Found', HttpStatus.NOT_FOUND)
+      }
 
       return productOrdenedSmallestPrice
       
@@ -75,11 +88,11 @@ export class ProductsService {
           where: { id },
         });
         return deleteProduct
+
       } catch (error) {
+
         throw new HttpException('Product Not Found', HttpStatus.NOT_FOUND)
         
-      }
-      
+      }  
     }
-  
 }
