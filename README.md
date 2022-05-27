@@ -70,6 +70,12 @@ http://localhost:3003/products
 # Order
 http://localhost:3003/order
 
+# how to access the data of Database
+$type => mysql
+$port => 3309
+$user => root
+@password = > root
+
 # solution for possible erros 
 $ 1- install dependencies inside docker ( yarn )
 
