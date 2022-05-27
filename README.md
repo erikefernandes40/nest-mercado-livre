@@ -74,7 +74,7 @@ http://localhost:3003/order
 $type => mysql
 $port => 3309
 $user => root
-@password = > root
+$password = > root
 
 # solution for possible erros 
 $ 1- install dependencies inside docker ( yarn )
